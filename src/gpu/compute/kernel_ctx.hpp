@@ -122,7 +122,7 @@ private:
     void set_default_options(const primitive_attr_t *attr) {
         // By default fp32 division and sqrt are not IEEE-compliant
         add_option("-cl-fp32-correctly-rounded-divide-sqrt");
-
+        add_option("-cl-intel-greater-than-4GB-buffer-required");
         if (attr && attr->gpu_attr_) {
             auto *gpu_attr = utils::downcast<gpu_primitive_attr_t *>(
                     attr->gpu_attr_.get());
